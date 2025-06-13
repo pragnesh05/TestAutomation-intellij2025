@@ -1,26 +1,26 @@
 Feature:Amazon Home Page Validation
-@sc01
+@sc01 @amazon
   Scenario: search function
-    Given user navigate to amazon home page
-    When user search product name "laptop" in search bar
+    Given user navigate to Amazon home page
+    When user enter product name "laptop" in search bar
     And click on search icon
     Then verify the search result
     And verify the title of current page
 
-   @sc02
+   @sc02 @amazon
 
     Scenario Outline: search function
-      Given user navigate to amazon home page
-      When user search product name "<Product Name>" in search bar
+      Given user navigate to Amazon home page
+      When user enter product name "<Product Name>" in search bar
       And click on search icon
       Then verify the search result
       And verify the title of current page
       Examples:
         | Product Name |
         | iphone       |
-        | Toys         |
+        | Toy          |
         | Fan          |
-         |laptop        |
+        | laptop       |
 
 
 

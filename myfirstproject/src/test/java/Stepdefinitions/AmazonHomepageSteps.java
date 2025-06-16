@@ -44,4 +44,13 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
         System.out.println(title);
 
     }
+
+    @When("user extracts dropdown values")
+    public void userExtractsDropdownValues() {
+        
+    }
+
+    @Then("user verify the office product value in dropdown")
+    public void userVerifyTheOfficeProductValueInDropdown() {
+    }
 }

@@ -28,6 +28,7 @@ Feature:Amazon Home Page Validation
        Scenario: Dropdown Validation
          Given user navigate to Amazon home page
          When user extracts dropdown values
+         And user select value from dropdown
          Then user verify the office product value in dropdown
 
 

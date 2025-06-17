@@ -10,9 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class AmazonHomepageSteps {
 WebDriver web;
+    WebElement categoryDropdown;
     @Given("user navigate to Amazon home page")
     public void homePage()
     {
@@ -48,10 +50,10 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
 
     @When("user extracts dropdown values")
     public void userExtractsDropdownValues() {
-        WebElement catagorydropdown= web.findElement(By.id("searchDropdownBox"));
-     int size=catagorydropdown.findElements(By.tagName("option")).size();
+        categoryDropdown= web.findElement(By.id("searchDropdownBox"));
+     int size= categoryDropdown.findElements(By.tagName("option")).size();
      for(int i=0;i<size;i++){
-       String val=  catagorydropdown.findElements(By.tagName("option")).get(i).getText();
+       String val=  categoryDropdown.findElements(By.tagName("option")).get(i).getText();
          System.out.println(val);
      }
 
@@ -60,5 +62,11 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
 
     @Then("user verify the office product value in dropdown")
     public void userVerifyTheOfficeProductValueInDropdown() {
+    }
+
+    @And("user select value from dropdown")
+    public void userSelectValueFromDropdown() {
+        Select categoryDrop =new Select(categoryDropdown);
+        categoryDrop.selectByVisibleText("Baby");
     }
 }

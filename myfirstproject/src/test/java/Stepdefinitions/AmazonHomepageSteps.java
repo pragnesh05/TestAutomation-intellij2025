@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -47,6 +48,13 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
 
     @When("user extracts dropdown values")
     public void userExtractsDropdownValues() {
+        WebElement catagorydropdown= web.findElement(By.id("searchDropdownBox"));
+     int size=catagorydropdown.findElements(By.tagName("option")).size();
+     for(int i=0;i<size;i++){
+       String val=  catagorydropdown.findElements(By.tagName("option")).get(i).getText();
+         System.out.println(val);
+     }
+
         
     }
 

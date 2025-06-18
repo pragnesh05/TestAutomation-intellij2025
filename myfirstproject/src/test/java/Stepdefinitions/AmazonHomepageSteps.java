@@ -18,8 +18,8 @@ WebDriver web;
     @Given("user navigate to Amazon home page")
     public void homePage()
     {
-web=new FirefoxDriver();
-        web.get("https://www.amazon.com/");
+web=new ChromeDriver();
+        web.get("https://www.amazon.in/");
     }
 
 
@@ -67,6 +67,9 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
     @And("user select value from dropdown")
     public void userSelectValueFromDropdown() {
         Select categoryDrop =new Select(categoryDropdown);
-        categoryDrop.selectByVisibleText("Baby");
+        //categoryDrop.selectByVisibleText("Baby");
+        categoryDrop.selectByIndex(4);
+       // categoryDrop.selectByValue("search-alias=furniture");
+
     }
 }

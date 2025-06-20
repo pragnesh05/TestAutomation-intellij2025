@@ -1,5 +1,6 @@
 package Stepdefinitions;
 
+import base.BrowserBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,21 +13,22 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.IOException;
+
 public class AmazonHomepageSteps {
-WebDriver web;
+WebDriver driver;
     WebElement categoryDropdown;
     @Given("user navigate to Amazon home page")
-    public void homePage()
-    {
-web=new ChromeDriver();
-        web.get("https://www.amazon.in/");
+    public void homePage() throws IOException {
+        BrowserBase base=new BrowserBase();
+        driver = base.launchBrowser();
     }
 
 
     @When("user enter product name {string} in search bar")
     public void enterProductName(String value) {
 
-web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
+driver.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
 
     }
 
@@ -38,19 +40,19 @@ web.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
     @And("click on search icon")
     public void clickOnSearchIcon() {
 
-        web.findElement(By.id("nav-search-submit-button")).click();
+        driver.findElement(By.id("nav-search-submit-button")).click();
     }
 
     @And("verify the title of current page")
     public void verifyTheTitle() {
-      String title=  web.getTitle();
+      String title= driver.getTitle();
         System.out.println(title);
 
     }
 
     @When("user extracts dropdown values")
     public void userExtractsDropdownValues() {
-        categoryDropdown= web.findElement(By.id("searchDropdownBox"));
+        categoryDropdown= driver.findElement(By.id("searchDropdownBox"));
      int size= categoryDropdown.findElements(By.tagName("option")).size();
      for(int i=0;i<size;i++){
        String val=  categoryDropdown.findElements(By.tagName("option")).get(i).getText();

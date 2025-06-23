@@ -32,6 +32,13 @@ Feature:Amazon Home Page Validation
          Then user verify the office product value in dropdown
 
 
+         @sc05
+         Scenario: Mouse Action
+           Given user navigate to Amazon home page
+           When user click on baby list
+           Then validate to navigation
+
+
 
 
 

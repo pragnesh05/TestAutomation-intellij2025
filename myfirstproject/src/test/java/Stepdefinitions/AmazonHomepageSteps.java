@@ -1,6 +1,7 @@
 package Stepdefinitions;
 
 import base.BrowserBase;
+import base.CucumberContext;
 import base.PageObjectManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -18,9 +19,15 @@ import pageobjects.AmazonHomePage;
 import java.io.IOException;
 
 public class AmazonHomepageSteps {
-WebDriver driver;
+    WebDriver driver;
     WebElement categoryDropdown;
-   PageObjectManager pageObjectManager;
+  public PageObjectManager pageObjectManager;
+  public CucumberContext context;
+   public AmazonHomepageSteps(CucumberContext context){
+     this.context=context;
+
+   }
+
     @Given("user navigate to Amazon home page")
     public void homePage() throws IOException {
         BrowserBase base=new BrowserBase();

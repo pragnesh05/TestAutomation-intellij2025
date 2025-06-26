@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class CucumberContext {
 
-    BrowserBase browserBase;
-    PageObjectManager pageObjectManager;
+   public BrowserBase browserBase;
+   public PageObjectManager pageObjectManager;
 
 
     public CucumberContext() throws IOException {

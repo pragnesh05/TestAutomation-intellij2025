@@ -1,14 +1,18 @@
 package Stepdefinitions;
 
 
-import base.PageObjectManager;
+import base.CucumberContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SalesForceLoginValidSteps {
-    WebDriver driver;
+public class SalesForceLoginSteps {
+    CucumberContext context;
+
+    public SalesForceLoginSteps(CucumberContext context){
+        this.context=context;
+
+    }
 
     @Given("user navigate to sales force login page")
     public void homePage() {
@@ -30,7 +34,7 @@ public class SalesForceLoginValidSteps {
 
     @Given("user enter username {string} and password {string}")
     public void entercredi(){
-        PageObjectManager pageObjectManager=new PageObjectManager(driver);
+
 
     }
 }

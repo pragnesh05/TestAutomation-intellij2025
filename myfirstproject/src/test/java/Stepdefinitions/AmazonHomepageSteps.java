@@ -19,9 +19,9 @@ import pageobjects.AmazonHomePage;
 import java.io.IOException;
 
 public class AmazonHomepageSteps {
-    WebDriver driver;
+
     WebElement categoryDropdown;
-  public PageObjectManager pageObjectManager;
+
   public CucumberContext context;
    public AmazonHomepageSteps(CucumberContext context){
      this.context=context;
@@ -30,9 +30,8 @@ public class AmazonHomepageSteps {
 
     @Given("user navigate to Amazon home page")
     public void homePage() throws IOException {
-        BrowserBase base=new BrowserBase();
-        driver = base.launchBrowser();
-        pageObjectManager =new PageObjectManager(driver);
+
+
     }
 
 
@@ -42,7 +41,8 @@ public class AmazonHomepageSteps {
 //driver.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
        // AmazonHomePage homePage=new AmazonHomePage(driver);
         //homePage.enterProductValue(value);
-        pageObjectManager.getAmazonHomePage().enterProductValue(value);
+        context.pageObjectManager.getAmazonHomePage().enterProductValue(value);
+
     }
 
     @Then("verify the search result")

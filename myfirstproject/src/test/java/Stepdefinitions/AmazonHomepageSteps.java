@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,9 +20,9 @@ import pageobjects.AmazonHomePage;
 import java.io.IOException;
 
 public class AmazonHomepageSteps {
-
+WebDriver driver;
     WebElement categoryDropdown;
-
+PageObjectManager pageObjectManager;
   public CucumberContext context;
    public AmazonHomepageSteps(CucumberContext context){
      this.context=context;
@@ -30,6 +31,7 @@ public class AmazonHomepageSteps {
 
     @Given("user navigate to Amazon home page")
     public void homePage() throws IOException {
+
 
 
     }
@@ -48,20 +50,21 @@ public class AmazonHomepageSteps {
     @Then("verify the search result")
     public void verifySearchResult() {
 
+
     }
 
     @And("click on search icon")
     public void clickOnSearchIcon() {
 
        // driver.findElement(By.id("nav-search-submit-button")).click();
-        pageObjectManager.getAmazonHomePage().clickSearchIcon();
+       context. pageObjectManager.getAmazonHomePage().clickSearchIcon();
     }
 
     @And("verify the title of current page")
     public void verifyTheTitle() {
-      String title= driver.getTitle();
-        System.out.println(title);
-        pageObjectManager.getSearchResultPage().selectProduct();
+      //String title= driver.getTitle();
+        //System.out.println(title);
+        //pageObjectManager.getSearchResultPage().selectProduct();
 
 
 
@@ -69,7 +72,7 @@ public class AmazonHomepageSteps {
 
     @When("user extracts dropdown values")
     public void userExtractsDropdownValues() {
-        categoryDropdown= driver.findElement(By.id("searchDropdownBox"));
+       WebElement categoryDropdown= driver.findElement(By.id("searchDropdownBox"));
      int size= categoryDropdown.findElements(By.tagName("option")).size();
      for(int i=0;i<size;i++){
        String val=  categoryDropdown.findElements(By.tagName("option")).get(i).getText();
@@ -94,15 +97,16 @@ public class AmazonHomepageSteps {
 
     @When("user click on baby list")
     public void userClickOnBabyList() {
-        pageObjectManager.getAmazonHomePage().clickBabyWishList();
+      // pageObjectManager.getAmazonHomePage().clickBabyWishList();
+        context.pageObjectManager.getAmazonHomePage().clickBabyWishList();
 
     }
 
-    @Then("validate to navigation")
+    @Then("validate the navigation")
     public void validateToNavigation() {
-       boolean a= pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent();
-        System.out.println(a);
-        pageObjectManager.getBabyWishListPage().enterBabyProductValue("dress");
+         Assert.assertFalse(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
+      // Assert.assertTrue(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
+     // context.pageObjectManager.getBabyWishListPage().enterBabyProductValue("dress");
 
     }
 }

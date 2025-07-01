@@ -10,7 +10,7 @@ WebDriver driver;
 
     }
     public boolean isBabyWishListIsPresent(){
-      boolean val=  driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]")).isDisplayed();
+      boolean val=  driver.findElement(By.xpath("//h2[text()='Baby Wishlist']")).isDisplayed();
        return val;
     }
     public void enterBabyProductValue(String val){

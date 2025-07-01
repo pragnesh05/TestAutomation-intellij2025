@@ -1,10 +1,7 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.AmazonHomePage;
-import pageobjects.BabyWishListPage;
-import pageobjects.ProductSpecificPage;
-import pageobjects.SearchResultPage;
+import pageobjects.*;
 
 public class PageObjectManager {
     WebDriver driver;
@@ -32,9 +29,11 @@ public class PageObjectManager {
     public BabyWishListPage getBabyWishListPage(){
         BabyWishListPage wishListPage =new BabyWishListPage(driver);
         return wishListPage;
-
-
-
     }
+     public WikiPage getWikiPage(){
+         WikiPage wikipage=new WikiPage(driver);
+         return wikipage;
+
+     }
 
 }

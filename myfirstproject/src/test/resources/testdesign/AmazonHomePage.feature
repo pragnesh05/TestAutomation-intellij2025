@@ -34,9 +34,8 @@ Feature:Amazon Home Page Validation
 
          @sc05
          Scenario: Mouse Action
-           Given user navigate to Amazon home page
-           When user click on baby list
-           Then validate to navigation
+           Given user click on baby list
+           Then validate the navigation
 
 
 

@@ -14,28 +14,25 @@ import java.util.Properties;
 public class BrowserBase {
     WebDriver driver;
     public WebDriver launchBrowser() throws IOException {
-        File f= new File("src/main/resources/frameworkconfig.properties");
-        FileInputStream fis=new FileInputStream(f);
-       Properties prop=new Properties();
-       prop.load(fis);
+         File f= new File("src/main/resources/frameworkconfig.properties");
+         FileInputStream fis = new FileInputStream(f);
+            Properties prop = new Properties();
+            prop.load(fis);
+            if(driver==null){
+            if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
+                driver = new ChromeDriver();
+            } else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
+                driver = new EdgeDriver();
+            } else if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
+                driver = new FirefoxDriver();
+            } else {
+                throw new InvalidArgumentException("cofigure valid browser");
+            }
 
 
-
-      if(prop.getProperty("browser").equalsIgnoreCase("chrome"))
-        {
-            driver=new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.get(prop.getProperty("url"));
         }
-      else if(prop.getProperty("browser").equalsIgnoreCase("edge"))
-        {
-           driver=new EdgeDriver();
-      } else if (prop.getProperty("browser").equalsIgnoreCase("firefox")) {
-          driver = new FirefoxDriver();
-      }
-      else{
-          throw new InvalidArgumentException("cofigure valid browser");
-      }
-      driver.manage().window().maximize();
-      driver.get(prop.getProperty("url"));
       return driver;
     }
 }

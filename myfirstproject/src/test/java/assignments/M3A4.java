@@ -6,12 +6,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.ArrayList;
 
-public class SeleniumBasic {
-    public static void main(String[] args)throws InterruptedException{
+public class M3A4 {
 
-WebDriver driver = new FirefoxDriver();
-Thread.sleep(2000);
-driver.get("https://netbanking.hdfcbank.com/netbanking/");
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new FirefoxDriver();
+        Thread.sleep(2000);
+        driver.get("https://netbanking.hdfcbank.com/netbanking/");
         Thread.sleep(2000);
         driver.manage().window().maximize();
         Thread.sleep(2000);
@@ -21,15 +22,14 @@ driver.get("https://netbanking.hdfcbank.com/netbanking/");
         Thread.sleep(2000);
         ArrayList<String> list = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(list.get(1));
-        Thread.sleep(2000);
-
         System.out.println(driver.getTitle());
+        driver.close();
         Thread.sleep(3000);
-
-
         driver.switchTo().window(list.get(0));
         System.out.println(driver.getTitle());
         Thread.sleep(3000);
-        driver.quit();
+        driver.close();
+
+
     }
 }

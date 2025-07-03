@@ -3,7 +3,6 @@ package assignments;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 //8. TC-8 switch from 1st window to 0th window
 //9. TC-9 after switching, get the title of page
 //10. TC-10 close all windows of the browser
-public class M3A1 {
+public class M3A1And2 {
 
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
@@ -37,7 +36,9 @@ public class M3A1 {
         driver.switchTo().window(list.get(0));
         System.out.println(driver.getTitle());
         Thread.sleep(2000);
-        driver.quit();
+        driver.close();
+       // driver.quit();
+
 
 
     }

@@ -10,7 +10,6 @@ public class PageObjectManager {
 
     }
 
-
     public AmazonHomePage getAmazonHomePage(){
         AmazonHomePage homepage=new AmazonHomePage(driver);
         return homepage;

@@ -3,6 +3,7 @@ package Stepdefinitions;
 import base.CucumberContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pageobjects.WikiPage;
 
 public class WikiSteps {
@@ -14,8 +15,8 @@ public class WikiSteps {
     }
      @Given("user extracts the shareholder and shareholding values")
         public void getValues() {
-        testContext.pageObjectManager.getWikiPage().getShareHolderValue();
-        testContext.pageObjectManager.getWikiPage().getShareHoldingValue();
+         System.out.println(testContext.pageObjectManager.getWikiPage().getShareHolderValue());
+         System.out.println(testContext.pageObjectManager.getWikiPage().getShareHoldingValue());
 
 
      }
@@ -23,6 +24,11 @@ public class WikiSteps {
 
     @Then("validate the value")
     public void validateTheValue() {
+        System.out.println(testContext.pageObjectManager.getWikiPage().getShareholderShareholdingValue());
+        Assert.assertEquals("14.81%",testContext.pageObjectManager.getWikiPage().getShareholderShareholdingValue().get("Public"));
+        Assert.assertEquals("Public",testContext.pageObjectManager.getWikiPage().getShareHolderValue().get(3));
+        Assert.assertEquals("Others",testContext.pageObjectManager.getWikiPage().getShareHolderValue().get(4));
+
 
     }
 }

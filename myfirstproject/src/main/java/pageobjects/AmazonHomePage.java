@@ -1,6 +1,5 @@
 package pageobjects;
 
-import base.PageObjectManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,16 +12,20 @@ public AmazonHomePage(WebDriver driver){
     this.driver=driver;
 
 }
-    public void enterProductValue(String value){
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
+    public AmazonHomePage enterProductValue(String value){
+
+    driver.findElement(By.id("twotabsearchtextbox")).sendKeys(value);
+    return this;
     }
-    public void clickSearchIcon(){
+    public AmazonHomePage clickSearchIcon(){
         driver.findElement(By.id("nav-search-submit-button")).click();
+      return this;
 
 
     }
     public void selectCategoryDropdownValue(){
         driver.findElement(By.xpath("//select[@id='searchDropdownBox']")).click();
+
     }
     public void clickBabyWishList(){
         WebElement element= driver.findElement(By.id("nav-link-accountList-nav-line-1"));

@@ -109,4 +109,21 @@ PageObjectManager pageObjectManager;
      // context.pageObjectManager.getBabyWishListPage().enterBabyProductValue("dress");
 
     }
+
+    @Given("user search the product")
+    public void userSearchTheProduct() {
+       context.pageObjectManager.getAmazonHomePage().enterProductValue("iphone").clickSearchIcon();
+
+    }
+
+    @When("user select specific product")
+    public void userSelectSpecificProduct() {
+       context.pageObjectManager.getSearchResultPage().selectProduct("4");
+
+    }
+
+    @Then("verify the title of page")
+    public void verifyTheTitleOfPage() {
+
+    }
 }

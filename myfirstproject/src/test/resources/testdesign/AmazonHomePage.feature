@@ -37,6 +37,11 @@ Feature:Amazon Home Page Validation
            Given user click on baby list
            Then validate the navigation
 
+           @sc06
+          Scenario: Window Handling
+            Given user search the product
+            When user select specific product
+            Then verify the title of page
 
 
 

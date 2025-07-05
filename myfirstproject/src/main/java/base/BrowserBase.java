@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BrowserBase {
@@ -32,6 +33,7 @@ public class BrowserBase {
 
             driver.manage().window().maximize();
             driver.get(prop.getProperty("url"));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
       return driver;
     }

@@ -104,9 +104,9 @@ PageObjectManager pageObjectManager;
 
     @Then("validate the navigation")
     public void validateToNavigation() {
-         Assert.assertFalse(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
-      // Assert.assertTrue(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
-     // context.pageObjectManager.getBabyWishListPage().enterBabyProductValue("dress");
+        // Assert.assertFalse(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
+       Assert.assertTrue(context.pageObjectManager.getBabyWishListPage().isBabyWishListIsPresent());
+     context.pageObjectManager.getBabyWishListPage().enterBabyProductValue("dress");
 
     }
 

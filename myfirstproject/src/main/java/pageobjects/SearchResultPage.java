@@ -15,6 +15,6 @@ public class SearchResultPage {
     }
     public void selectProduct(String value){
        // driver.findElement(By.xpath("//div[@data-cel-widget='search_result_"+value+"']/descendant::a[2]")).click();
-       driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[5]/div[1]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]/a[1]/div[1]/img[1]")).sendKeys(Keys.chord(Keys.CONTROL,Keys.ENTER));
+       driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[5]/div[1]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]/a[1]/div[1]/img[1]")).click();
     }
 }

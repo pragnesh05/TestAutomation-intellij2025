@@ -34,5 +34,9 @@ public class PageObjectManager {
          return wikipage;
 
      }
+     public SauceDemoLoginPage getSauceDemoLoginPage(){
+        SauceDemoLoginPage loginPage=new SauceDemoLoginPage(driver);
+        return loginPage;
+     }
 
 }

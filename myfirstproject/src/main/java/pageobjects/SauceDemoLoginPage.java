@@ -9,16 +9,18 @@ public class SauceDemoLoginPage {
         this.driver=driver;
 
     }
-    public void enterUsername(){
+    public SauceDemoLoginPage enterUsername(){
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
-
+       return this;
     }
-    public void enterPassword(){
+    public SauceDemoLoginPage enterPassword(){
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        return this;
 
     }
-    public void clickOnLoginButton(){
+    public SauceDemoLoginPage clickOnLoginButton(){
         driver.findElement(By.name("login-button")).click();
+        return this;
     }
 
 }

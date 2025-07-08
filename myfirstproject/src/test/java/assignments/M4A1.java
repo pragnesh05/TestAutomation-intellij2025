@@ -10,6 +10,7 @@ public class M4A1 {
         driver.get("https://www.facebook.com/");
         Thread.sleep(2000);
         driver.manage().window().maximize();
+        System.out.println(driver.getTitle());
         driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]")).click();
         Thread.sleep(2000);
 

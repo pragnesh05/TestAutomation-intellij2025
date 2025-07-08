@@ -22,8 +22,10 @@ public class M4A2 {
         Thread.sleep(2000);
         driver.findElement(By.id("sView1:r1:0:firstName::content")).sendKeys("Riya");
         driver.findElement(By.id("sView1:r1:0:lastName::content")).sendKeys("Patel");
+        Thread.sleep(2000);
         driver.findElement(By.name("sView1:r1:0:jobTitle")).sendKeys("Quality Analyst");
         driver.findElement(By.name("sView1:r1:0:workPhone")).sendKeys("12345678");
+        Thread.sleep(2000);
         driver.findElement(By.id("sView1:r1:0:companyName::content")).sendKeys("ABC");
         driver.findElement(By.name("sView1:r1:0:address1")).sendKeys("1909 US HIGHWAY NORTH");
         driver.findElement(By.id("sView1:r1:0:city::content")).sendKeys("TAMPA");
@@ -32,6 +34,7 @@ public class M4A2 {
       // state.selectByVisibleText("Delaware");
         driver.findElement(By.name("sView1:r1:0:postalCode")).sendKeys("33851");
         driver.findElement(By.id("sView1:r1:0:subscription1::content"));
+        Thread.sleep(2000);
         driver.close();
 
 

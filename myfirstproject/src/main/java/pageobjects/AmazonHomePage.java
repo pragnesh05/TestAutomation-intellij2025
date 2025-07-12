@@ -38,13 +38,13 @@ public AmazonHomePage(WebDriver driver){
         WebElement element= driver.findElement(By.id("nav-link-accountList-nav-line-1"));
         Actions actions=new Actions(driver);
         actions.clickAndHold(element).build().perform();
-        driver.findElement(By.linkText("Baby Wishlist")).sendKeys(Keys.chord(Keys.CONTROL,Keys.ENTER));
+        driver.findElement(By.linkText("Baby Wishlist")).click();
 
     }
-    public void switchWindow(){
+    /*public void switchWindow(){
         Set<String> winProp=driver.getWindowHandles();
         for (String prop:winProp){
-            driver.switchTo().window(prop);
+
             WebDriverWait driverWait=new WebDriverWait(driver, Duration.ofSeconds(30));
             driverWait.pollingEvery(Duration.ofSeconds(10));
             driverWait.ignoring(NoSuchElementException.class);
@@ -57,6 +57,6 @@ public AmazonHomePage(WebDriver driver){
         driver.switchTo().defaultContent();
 
 
-    }
+    }*/
 
 }

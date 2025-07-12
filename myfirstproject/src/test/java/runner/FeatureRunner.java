@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/testdesign"},
         glue="Stepdefinitions",
-        tags="@sc07"
+        tags="@sc05"
 
 )
 

@@ -35,6 +35,7 @@ public class M4A2 {
         driver.findElement(By.name("sView1:r1:0:postalCode")).sendKeys("33851");
         driver.findElement(By.id("sView1:r1:0:subscription1::content"));
         Thread.sleep(2000);
+
         driver.close();
 
 

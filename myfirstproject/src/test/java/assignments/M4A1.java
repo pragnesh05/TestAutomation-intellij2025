@@ -11,8 +11,11 @@ public class M4A1 {
         Thread.sleep(2000);
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
-        driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]")).click();
+        //WebDriver frame = driver.switchTo().frame(0);
+        //driver.findElement(By.cssSelector("#u_0_0_oU")).click();
         Thread.sleep(2000);
-
+      // driver.findElement(By.id("email")).sendKeys("abc");
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[3]/a[1]")).click();
+       driver.close();
     }
 }

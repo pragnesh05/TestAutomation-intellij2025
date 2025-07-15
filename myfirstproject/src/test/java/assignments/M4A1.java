@@ -16,6 +16,7 @@ public class M4A1 {
         Thread.sleep(2000);
       // driver.findElement(By.id("email")).sendKeys("abc");
         driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[3]/a[1]")).click();
-       driver.close();
+        Thread.sleep(2000);
+       //driver.close();
     }
 }

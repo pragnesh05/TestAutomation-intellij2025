@@ -9,9 +9,10 @@ public class M5A4 {
         WebDriver driver= new ChromeDriver();
         driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt");
         driver.manage().window().maximize();
-        //driver.switchTo().frame(0);
-        driver.findElement(By.xpath("//button[normalize-space()='Try it']")).click();
+       // driver.switchTo().frame(0);
+        //driver.findElement(By.xpath("//button[@onclick='myFunction()']")).click();
+        driver.findElement(By.xpath("/html[1]/body[1]/button[1]")).click();
         Thread.sleep(2000);
-        driver.close();
+       // driver.close();
     }
 }

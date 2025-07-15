@@ -72,7 +72,7 @@ PageObjectManager pageObjectManager;
 
     @When("user extracts dropdown values")
     public void userExtractsDropdownValues() {
-       WebElement categoryDropdown= driver.findElement(By.id("searchDropdownBox"));
+        categoryDropdown= driver.findElement(By.id("searchDropdownBox"));
      int size= categoryDropdown.findElements(By.tagName("option")).size();
      for(int i=0;i<size;i++){
        String val=  categoryDropdown.findElements(By.tagName("option")).get(i).getText();

@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
-public class M8A1 {
+public class M8A123 {
     public static void main(String[] args) throws AWTException, InterruptedException {
         WebDriver driver=new ChromeDriver();
         driver.get("https://smallpdf.com/word-to-pdf");
@@ -16,7 +16,7 @@ public class M8A1 {
         Robot r=new Robot();
         driver.findElement(By.xpath("//span[@class='sc-8s01yt-4 dNifye']")).click();
         r.setAutoDelay(1000);
-        StringSelection ss=new StringSelection("C:\\Users\\ShivShubh\\Desktop\\homework.docx");
+        StringSelection ss=new StringSelection("C:\\project\\fileupload\\homework.docx");
         Toolkit.getDefaultToolkit().getSystemClipboard().getContents(ss);
 
         r.keyPress(KeyEvent.VK_CONTROL);

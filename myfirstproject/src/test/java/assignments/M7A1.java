@@ -13,35 +13,23 @@ public class M7A1 {
 
     public static void main(String[] args) throws InterruptedException, AWTException {
 
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
 
         driver.get("https://smallpdf.com/word-to-pdf");
         driver.manage().window().maximize();
-        Robot r=new Robot();
-
+        Robot r = new Robot();
+        driver.findElement(By.xpath("//span[@class='sc-8s01yt-4 dNifye']")).click();
         r.setAutoDelay(1000);
-        WebElement uploadFileElement = driver.findElement(By.id("__picker-input"));
+        StringSelection ss=new StringSelection("C:\\Users\\ShivShubh\\Desktop\\homework.pdf");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
 
-        // Specify the absolute path to the file you want to upload
-        String filePath = "C:\\project\\fileupload\\homework.docx"; // Replace with your file path
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_V);
 
-        // Send the file path to the input element
-        uploadFileElement.sendKeys(filePath);
-
-        // Locate and click the upload button (if applicable)
-        WebElement uploadButton = driver.findElement(By.id("file-submit"));
-
-        boolean isDownloadBtn=true;
-
-        do{
-            uploadButton = driver.findElement(By.xpath("//button[@class='sc-11drgl3-0 sc-1az4ycp-0 ireDIG hofZyb'][1]s"));
-            if(uploadButton!=null){
-                isDownloadBtn=false;
-            }
-        }
-        while (isDownloadBtn);
-        uploadButton.click();
-
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(2000);
         driver.close();
 
@@ -49,3 +37,7 @@ public class M7A1 {
 
     }
 }
+
+
+
+

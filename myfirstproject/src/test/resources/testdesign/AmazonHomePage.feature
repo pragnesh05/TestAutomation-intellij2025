@@ -1,4 +1,5 @@
 Feature:Amazon Home Page Validation
+
 @sc01 @amazon
   Scenario: search function
     Given user navigate to Amazon home page

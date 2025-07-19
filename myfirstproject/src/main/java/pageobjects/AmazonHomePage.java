@@ -38,7 +38,7 @@ public AmazonHomePage(WebDriver driver){
         WebElement element= driver.findElement(By.id("nav-link-accountList-nav-line-1"));
         Actions actions=new Actions(driver);
         actions.clickAndHold(element).build().perform();
-        driver.findElement(By.linkText("Baby Wishlist")).click();
+        driver.findElement(By.linkText("Baby Wishlist")).sendKeys(Keys.chord(Keys.CONTROL,Keys.ENTER));
 
     }
     /*public void switchWindow(){

@@ -22,6 +22,9 @@ public class ListExample {
         l1.add("hello");
         l1.add("hello");
         System.out.println(l1);
+        for(String k:l1){
+            System.out.println(k);
+        }
 
     }
 

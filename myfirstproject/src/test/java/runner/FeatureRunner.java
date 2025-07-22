@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
         plugin={"pretty",
                 "html:target/report/report.html",
                 "json:target/report/report.json",
-                "junit:target/report/report.xml"
+                "junit:target/report/report.xml",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 
         }
 

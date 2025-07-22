@@ -28,7 +28,7 @@ public class M8A123 {
         r.keyPress(KeyEvent.VK_ENTER);
         r.keyRelease(KeyEvent.VK_ENTER);
         //Thread.sleep(3000);
-        driver.findElement(By.xpath("//a[@class='sc-1bu7qfl-0 bGbCKV sc-1az4ycp-1 ebRjiG']")).click();
+        driver.findElement(By.xpath("//div[@class='sc-1nrs99k-0 wvha7z-0 kccFVN jSksmI']")).click();
         Thread.sleep(2000);
         driver.close();
 

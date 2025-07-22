@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         tags="@sc01",
         plugin={"pretty",
                 "html:target/report/report.html",
-                "jason:target/report/report.jason",
+                "json:target/report/report.json",
                 "junit:target/report/report.xml"
 
         }

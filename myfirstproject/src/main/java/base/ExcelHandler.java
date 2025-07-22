@@ -1,6 +1,5 @@
 package base;
 
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -12,7 +11,7 @@ import java.io.IOException;
 public class ExcelHandler {
 
 
-   public void getExcelData(){
+   public String getExcelData(String SheetName, int row, int column){
         FileInputStream fileInputStream;
         try {
             fileInputStream=new FileInputStream (new File("src/main/resources/data/TestData.xlsx"));
@@ -23,13 +22,16 @@ public class ExcelHandler {
         XSSFWorkbook workbook;
 
         try {
+
             workbook= new XSSFWorkbook(fileInputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-         }
+       XSSFSheet sheet = workbook.getSheet(SheetName);
+       return sheet.getRow(row).getCell(column).getStringCellValue();
+        
 
-
+   }
 }
 
 

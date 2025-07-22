@@ -1,12 +1,25 @@
 Feature:Amazon Home Page Validation
 
+
+  #@before
 @sc01 @amazon
   Scenario: search function
+  #@beforestep
     Given user navigate to Amazon home page
+  #@afterstep
+  #@beforestep
     When user enter product name "laptop" in search bar
+  #afterstep
+  #@beforestep
     And click on search icon
+  #@afterstep
+  #@beforestep
     Then verify the search result
+  #@afterstep
+  #@beforestep
     And verify the title of current page
+  #@afterstep
+    #@after
 
    @sc02 @amazon
 

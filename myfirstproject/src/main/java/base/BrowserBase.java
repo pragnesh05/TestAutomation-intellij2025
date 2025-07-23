@@ -8,18 +8,28 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
 public class BrowserBase {
     WebDriver driver;
-    public WebDriver launchBrowser() throws IOException {
+    public WebDriver launchBrowser()  {
          File f= new File("src/main/resources/frameworkconfig.properties");
-         FileInputStream fis = new FileInputStream(f);
-            Properties prop = new Properties();
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(f);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Properties prop = new Properties();
+        try {
             prop.load(fis);
-            if(driver==null){
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if(driver==null){
             if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
                 driver = new ChromeDriver();
             } else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
